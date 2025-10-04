@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const EmpListing = () => {
   const [empdata, setEmpdata] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // LoadDetail 함수와 LoadEdit 함수를 제거했습니다.
   
