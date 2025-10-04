@@ -68,7 +68,7 @@ const EmpListing = () => {
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>{item.address}</td>
-                    <td>{itme.department}</td>
+                    <td>{item.department}</td>
 
                     <td>
                       {/* Edit 버튼: LoadEdit 함수 대신 to 속성으로 경로 직접 연결 */}
