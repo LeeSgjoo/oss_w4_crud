@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const EmpListing = () => {
   const [empdata, setEmpdata] = useState(null);
