@@ -70,30 +70,30 @@ const EmpListing = () => {
                     <td>{item.email}</td>
                     <td>{item.phone}</td>
                     <td>
-                      <link
+                      <Link
                         onClick={() => {
                           LoadEdit(item.id);
                         }}
                         className="btn btn-success"
                       >
                         Edit
-                      </link>
-                      <link
+                      </Link>
+                      <Link
                         onClick={() => {
                           Removefunction(item.id);
                         }}
                         className="btn btn-danger"
                       >
                         Remove
-                      </link>
-                      <link
+                      </Link>
+                      <Link
                         onClick={() => {
                           LoadDetail(item.id);
                         }}
                         className="btn btn-primary"
                       >
                         Details
-                      </link>
+                      </Link>
                     </td>
                   </tr>
                 ))}
