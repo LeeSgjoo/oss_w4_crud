@@ -8,11 +8,13 @@ const EmpCreate = () => {
   const [phone, setPhone] = useState("");
   const [active, setActive] = useState(true);
   const [validation, setValidation] = useState(false);
+  const [address, setAddress] = useState("");
+  const [department, setDepartment] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, email, phone, active };
+    const empdata = { id, name, email, phone, active, address, department };
 
     fetch("https://68e126f893207c4b47966580.mockapi.io/db", {
       method: "POST",
@@ -82,6 +84,18 @@ const EmpCreate = () => {
                         onChange={(e) => setPhone(e.target.value)}
                         className="form-control"
                       ></input>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Address</label>
+                      <input value={address} onChange={(e) => setAddress(e.target.value)} className="form-control"></input>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Department</label>
+                      <input value={department} onChange={(e) => setDepartment(e.target.value)} className="form-control"></input>
                     </div>
                   </div>
                   <div className="col-lg-12">

@@ -36,6 +36,12 @@ const EmpDetail = () => {
             <h5>
               Phone is : <b>{empdata.phone}</b>
             </h5>
+            <h5>
+              Address is : <b>{empdata.address}</b>
+            </h5>
+            <h5>
+              Department is : <b>{empdata.department}</b>
+            </h5>
             <Link className="btn btn-danger" to="/">
               Back to List
             </Link>

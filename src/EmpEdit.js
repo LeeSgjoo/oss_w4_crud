@@ -27,6 +27,8 @@ const EmpEdit = () => {
   const [phone, setPhone] = useState("");
   const [active, setActive] = useState(true);
   const [validation, setValidation] = useState(false);
+  const [address, setAddress] = useState("");
+  const [department, setDepartment] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -121,6 +123,18 @@ const EmpEdit = () => {
                       <Link to="/" className="btn btn-danger">
                         Back
                       </Link>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Address</label>
+                      <input value={address} onChange={(e) => setAddress(e.target.value)} className="form-control"></input>
+                    </div>
+                  </div>
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Department</label>
+                      <input value={department} onChange={(e) => setDepartment(e.target.value)} className="form-control"></input>
                     </div>
                   </div>
                 </div>
