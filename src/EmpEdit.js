@@ -20,7 +20,7 @@ const EmpEdit = () => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [empid]);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
