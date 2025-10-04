@@ -14,7 +14,7 @@ const EmpListing = () => {
   };
   const Removefunction = (id) => {
     if (window.confirm("Do you want to remove?")) {
-      fetch("https://68e126f893207c4b47966580.mockapi.io/db" + id, {
+      fetch("https://68e126f893207c4b47966580.mockapi.io/db/" + id, {
         method: "DELETE",
       })
         .then((res) => {

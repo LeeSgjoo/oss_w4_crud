@@ -6,7 +6,7 @@ const EmpEdit = () => {
   //const [empdata, setEmpdata] = useState({});
 
   useEffect(() => {
-    fetch("https://68e126f893207c4b47966580.mockapi.io/db" + empid)
+    fetch("https://68e126f893207c4b47966580.mockapi.io/db/" + empid)
       .then((res) => {
         return res.json();
       })
@@ -33,7 +33,7 @@ const EmpEdit = () => {
     e.preventDefault();
     const empdata = { id, name, email, phone, active };
 
-    fetch("https://68e126f893207c4b47966580.mockapi.io/db" + empid, {
+    fetch("https://68e126f893207c4b47966580.mockapi.io/db/" + empid, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(empdata),

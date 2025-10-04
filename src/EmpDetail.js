@@ -6,7 +6,7 @@ const EmpDetail = () => {
   const [empdata, setEmpdata] = useState({});
 
   useEffect(() => {
-    fetch("https://68e126f893207c4b47966580.mockapi.io/db" + empid)
+    fetch("https://68e126f893207c4b47966580.mockapi.io/db/" + empid)
       .then((res) => {
         return res.json();
       })
