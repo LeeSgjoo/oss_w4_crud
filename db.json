@@ -1,18 +1,14 @@
-{
-  "employee": [
-    {
-      "id": 1,
-      "name": "plla",
-      "email": "jhbljs92@naver.com",
-      "phone": "01044261317",
-      "active": true
-    },
-    {
-      "id": 2,
-      "name": "mina",
-      "email": "mina@naver.com",
-      "phone": "01098765431",
-      "active": true
-    }
-  ]
-}
+[
+  {
+    "name": "plla",
+    "email": "jhbljs92@naver.com",
+    "phone": "01044261317",
+    "active": true
+  },
+  {
+    "name": "mina",
+    "email": "mina@naver.com",
+    "phone": "01098765431",
+    "active": true
+  }
+]
