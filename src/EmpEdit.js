@@ -16,6 +16,8 @@ const EmpEdit = () => {
         setEmail(resp.email);
         setPhone(resp.phone);
         setActive(resp.active);
+        setAddress(resp.address);
+        setDepartment(resp.department);
       })
       .catch((err) => {
         console.log(err.message);
@@ -29,11 +31,19 @@ const EmpEdit = () => {
   const [validation, setValidation] = useState(false);
   const [address, setAddress] = useState("");
   const [department, setDepartment] = useState("");
+  const [phoneError, setPhoneError] = useState(false);
   const navigate = useNavigate();
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    const onlyNumbers = /^[0-9]*$/.test(value); // 숫자로만 구성되었는지 확인
+    setPhone(value);
+    setPhoneError(!onlyNumbers); // 숫자가 아니면 true
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, email, phone, active };
+    const empdata = { id, name, email, phone, active, address, department };
 
     fetch("https://68e126f893207c4b47966580.mockapi.io/db/" + empid, {
       method: "PUT",
@@ -99,9 +109,10 @@ const EmpEdit = () => {
                       <label>Phone</label>
                       <input
                         value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={handlePhoneChange}
                         className="form-control"
                       ></input>
+                      {phoneError && <span className="text-danger">전화번호는 숫자만 입력 가능합니다.</span>}
                     </div>
                   </div>
                   <div className="col-lg-12">

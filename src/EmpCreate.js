@@ -32,7 +32,7 @@ const EmpCreate = () => {
             body: JSON.stringify(empdata),
           })
             .then((res) => {
-              alert("Saved successfully.");
+              alert("성공적으로 저장되었습니다.");
               navigate("/");
             })
             .catch((err) => {
