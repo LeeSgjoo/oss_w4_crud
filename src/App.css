@@ -41,3 +41,8 @@
     transform: rotate(360deg);
   }
 }
+
+.table-header-custom {
+  background-color: #20c997; /* 감각적인 청록색 */
+  color: white;
+}
