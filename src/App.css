@@ -43,6 +43,12 @@
 }
 
 .table-header-custom {
-  background-color: #20c997; /* 감각적인 청록색 */
+  background-color: #4ad1b0;
+  color: white;
+}
+
+
+.table-body-custom {
+  background-color: #89de78; 
   color: white;
 }
