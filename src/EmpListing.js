@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
+import Swal from 'sweetalert2';
+import './EmpListing.css';
 
 const EmpListing = () => {
   const [empdata, setEmpdata] = useState(null);
@@ -9,18 +11,28 @@ const EmpListing = () => {
   // LoadDetail 함수와 LoadEdit 함수를 제거했습니다.
   
   const Removefunction = (id) => {
-    if (window.confirm("Do you want to remove?")) {
+    Swal.fire({
+    title: "삭제하시겠습니까?",
+    text: "삭제된 데이터는 복구할 수 없습니다.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "삭제",
+    cancelButtonText: "취소"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // '삭제' 버튼을 눌렀을 때 실행되는 코드
       fetch("https://68e126f893207c4b47966580.mockapi.io/db/" + id, {
         method: "DELETE",
       })
-        .then((res) => {
-          alert("Removed successfully.");
+        .then(() => {
+          Swal.fire("삭제 완료!", "데이터가 삭제되었습니다.", "success");
           window.location.reload();
         })
         .catch((err) => {
           console.log(err.message);
         });
     }
+  });
   };
 
   useEffect(() => {
@@ -48,7 +60,7 @@ const EmpListing = () => {
             </Link>
           </div>
           <table className="table table-bordered">
-            <thead className="bg-dark text-white">
+            <thead className="table-header-custom">
               <tr>
                 <td>ID</td>
                 <td>Name</td>

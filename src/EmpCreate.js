@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const EmpCreate = () => {
   const [id] = useState("");
@@ -16,6 +17,30 @@ const EmpCreate = () => {
     e.preventDefault();
     const empdata = { id, name, email, phone, active, address, department };
 
+    Swal.fire({
+        title: "추가하시겠습니까",
+        text: "추가한 데이터는 수정할 수 있습니다.",
+        icon: "Notice",
+        showCancelButton: true,
+        confirmButtonText: "추가",
+        cancelButtonText: "취소"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          fetch("https://68e126f893207c4b47966580.mockapi.io/db", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(empdata),
+          })
+            .then((res) => {
+              alert("Saved successfully.");
+              navigate("/");
+            })
+            .catch((err) => {
+              console.log(err.message);
+            });
+        }
+      });
+    /*
     fetch("https://68e126f893207c4b47966580.mockapi.io/db", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -28,6 +53,7 @@ const EmpCreate = () => {
       .catch((err) => {
         console.log(err.message);
       });
+      */
   };
 
   return (
