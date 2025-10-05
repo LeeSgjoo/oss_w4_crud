@@ -52,3 +52,8 @@
   background-color: #F5F5F5; 
   color: #282c34;
 }
+
+.card-title #cardtitle{
+  font-style:italic;
+  color: #8A2BE2;
+}

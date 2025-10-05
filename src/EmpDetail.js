@@ -21,7 +21,7 @@ const EmpDetail = () => {
     <div>
       <div className="card" style={{ textAlign: "left" }}>
         <div className="card-title">
-          <h2>Employee Create</h2>
+          <h2 id = "cardtitle">Employee Create</h2>
         </div>
         <div className="card-body"></div>
         {empdata && (
