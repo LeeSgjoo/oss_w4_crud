@@ -47,7 +47,7 @@ const EmpListing = () => {
       });
   }, []);
   return (
-    <div className="container">
+    <div className="container my-5">
       <div className="card">
         <div className="card-title">
           <h2>Employee Listing</h2>
