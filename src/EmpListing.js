@@ -70,7 +70,7 @@ const EmpListing = () => {
                 <td>Action</td>
               </tr>
             </thead>
-            <tbody>
+            <tbody className = "table-body-custom">
               {empdata &&
                 empdata.map((item) => (
                   <tr key={item.id}>
